@@ -31,10 +31,13 @@ echo "---------------------------------"
 git status -b
 echo "---------------------------------"
 
-GIT_CLEAN=$(git status -s)
-if [ ${#GIT_CLEAN} -eq 0 ]; then
-    echo "Working tree clean, do not need push."
-else
-    remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
-    git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
-fi
+remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
+    
+# GIT_CLEAN=$(git status -s)
+# if [ ${#GIT_CLEAN} -eq 0 ]; then
+#     echo "Working tree clean, do not need push."
+# else
+#     remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+#     git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
+# fi
