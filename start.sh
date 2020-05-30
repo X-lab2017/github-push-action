@@ -25,8 +25,11 @@ fi
 
 cd ${INPUT_DIRECTORY}
 
+echo "---------------------------------"
 git status
+echo "---------------------------------"
 git status -b
+echo "---------------------------------"
 
 GIT_CLEAN=$(git status -s)
 if [ ${#GIT_CLEAN} -eq 0 ]; then
