@@ -25,12 +25,6 @@ fi
 
 cd ${INPUT_DIRECTORY}
 
-echo "---------------------------------"
-git status
-echo "---------------------------------"
-git status -s
-echo "---------------------------------"
-
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
 git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
     
