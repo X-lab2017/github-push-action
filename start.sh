@@ -25,6 +25,9 @@ fi
 
 cd ${INPUT_DIRECTORY}
 
+git status
+git status -b
+
 GIT_CLEAN=$(git status -s)
 if [ ${#GIT_CLEAN} -eq 0 ]; then
     echo "Working tree clean, do not need push."
