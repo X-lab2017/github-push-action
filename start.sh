@@ -28,7 +28,7 @@ cd ${INPUT_DIRECTORY}
 echo "---------------------------------"
 git status
 echo "---------------------------------"
-git status -b
+git status -s
 echo "---------------------------------"
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
